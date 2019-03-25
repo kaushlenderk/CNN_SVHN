@@ -10,7 +10,7 @@ Img
 
 <h2>Solution Steps:</h2>
 
-<h1>List of packages</h1>
+<h3>List of packages</h3>
 
     import os
     import itertools
@@ -35,13 +35,20 @@ Img
     %matplotlib inline
     plt.rcParams['figure.figsize'] = (12.0, 8.0)
 
-<h1></h1>
-<h1></h1>
-<h1></h1>
-<h1></h1>
-<h1></h1>
-<h1></h1>
-<h1></h1>
+<h3>Load Street View House Numbers (SVHN) Dataset (Format 2)</h3>
+<p><p>Download all three SVHN Dataset (Format 2) files from (http://ufldl.stanford.edu/housenumbers/) source</p></p>
+
+    train_dataset = scipy.io.loadmat('train_32x32.mat') 
+    train_extra_dataset = scipy.io.loadmat('extra_32x32.mat')
+    test_dataset = scipy.io.loadmat('test_32x32.mat')
+
+<h3></h3>
+<h3></h3>
+<h3></h3>
+<h3></h3>
+<h3></h3>
+<h3></h3>
+<h3></h3>
 
 <h2>Dataset Source</h2>
 http://ufldl.stanford.edu/housenumbers/
