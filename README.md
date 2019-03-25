@@ -86,6 +86,7 @@ Img
     y_test = keras.utils.to_categorical(y_test, 10)
 
 <h3>Model settings</h3>
+
     batch_size = 128
     nb_classes = 10
     nb_epoch = 20
