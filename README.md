@@ -96,54 +96,21 @@ Img
     model = Sequential()
 
 <h3>Model architecture setting</h3>
+ 
 
-    #input layer with 32 nodes
-    model.add(Conv2D(32,(3, 3), border_mode='same',activation='relu',input_shape=(32, 32, 3))) 
-    model.add(BatchNormalization())
+<h3>Model training </h3>
 
-    # first hidden layer with 32 nodes
-    model.add(Conv2D(32,(3, 3),activation='relu'))
-    model.add(BatchNormalization())
-    model.add(MaxPooling2D(pool_size=(2, 2)))
-    model.add(Dropout(0.25))
+<h3>Performance matrix on Training and Validation dataset</h3>
 
-    # second hidden layer with 64 nodes
-    model.add(Conv2D(64,(3, 3), border_mode='same',activation='relu'))
-    model.add(BatchNormalization())
+<h3>Graph: Training and Validation dataset performance</h3>
 
-    # third hidden layer with 64 nodes
-    model.add(Conv2D(64,(3, 3),activation='relu')) 
-    model.add(BatchNormalization())
-    model.add(MaxPooling2D(pool_size=(2, 2)))
-    model.add(Dropout(0.25))
+<h3>Evaluate model performance on Test dataset</h3>
 
-    # Flatten layer, Flatten serves as a connection between the convolution and dense layers
-    # transforms the format of the images from a 2d-array to a 1d-array
-    model.add(Flatten())
-    model.add(BatchNormalization())
+<h3>Make predictions on Test Dataset</h3>
 
-    # Dense is the layer to perform classification
-    model.add(Dense(512,activation='relu'))
-    model.add(BatchNormalization())
-    model.add(Dropout(0.5))
+<h3>Graph: Plot the first X test images, their predicted label, and the true label</h3>
 
-    # Final Dense layer to map target class
-    model.add(Dense(nb_classes,activation='softmax'))
-
-    # stpes to compile model, using SGD as learning rate
-    sgd = SGD(lr=0.01, decay=1e-6, momentum=0.9, nesterov=True)
-    model.compile(
-        loss='categorical_crossentropy', 
-        optimizer=sgd,
-        metrics=['accuracy']
-    )
-
-    # model summary
-    model.summary()
-
-<h3></h3>
-<h3></h3>
-<h3></h3>
+<h3>Save entire model to a HDF5 file</h3>
 
 <h2>Dataset Source</h2>
 http://ufldl.stanford.edu/housenumbers/
