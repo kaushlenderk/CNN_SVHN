@@ -42,7 +42,49 @@ Img
     train_extra_dataset = scipy.io.loadmat('extra_32x32.mat')
     test_dataset = scipy.io.loadmat('test_32x32.mat')
 
-<h3></h3>
+<h3>Preprocess Dataset</h3>
+
+    # Separate actual image data and label
+    X_train = train_dataset['X']
+    y_train = train_dataset['y']
+    X_extra_train = train_extra_dataset['X']
+    y_extra_train = train_extra_dataset['y']
+    X_test = Test['X']
+    y_test = Test['y']
+
+    # Print shape of the dataset
+    print('Training set: ', X_train.shape, y_train.shape)
+    print('Training extra set: ', X_extra_train.shape, X_extra_train.shape)
+    print('Testing set: ', X_test.shape, y_test.shape)
+
+    # Encode target column
+    X_train = X_train.astype('float32')
+    X_extra_train = X_extra_train.astype('float32')
+    X_test = X_test.astype('float32')
+
+    # Scale data instance values between 0 to 1, before feeding to the neural network model
+    X_train /= 255
+    X_extra_train /= 255
+    X_test /= 255
+
+    X_train = X_train[np.newaxis,...]
+    X_train = np.swapaxes(X_train,0,4).squeeze()
+
+    X_extra_train = X_extra_train[np.newaxis,...]
+    X_extra_train = np.swapaxes(X_extra_train,0,4).squeeze()
+
+    X_test = X_test[np.newaxis,...]
+    X_test = np.swapaxes(X_test,0,4).squeeze()
+
+
+    np.place(y_train,y_train == 10,0)
+    np.place(y_extra_train,y_extra_train == 10,0)
+    np.place(y_test,y_test == 10,0)
+
+    y_train = keras.utils.to_categorical(y_train, 10)
+    y_extra_train = keras.utils.to_categorical(y_extra_train, 10)
+    y_test = keras.utils.to_categorical(y_test, 10)
+
 <h3></h3>
 <h3></h3>
 <h3></h3>
