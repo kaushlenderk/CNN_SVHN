@@ -85,9 +85,62 @@ Img
     y_extra_train = keras.utils.to_categorical(y_extra_train, 10)
     y_test = keras.utils.to_categorical(y_test, 10)
 
-<h3></h3>
-<h3></h3>
-<h3></h3>
+<h3>Model settings</h3>
+    batch_size = 128
+    nb_classes = 10
+    nb_epoch = 20
+
+<h3>Create sequential model object</h3>
+    
+    # create Sequential model object
+    model = Sequential()
+
+<h3>Model architecture setting</h3>
+
+    #input layer with 32 nodes
+    model.add(Conv2D(32,(3, 3), border_mode='same',activation='relu',input_shape=(32, 32, 3))) 
+    model.add(BatchNormalization())
+
+    # first hidden layer with 32 nodes
+    model.add(Conv2D(32,(3, 3),activation='relu'))
+    model.add(BatchNormalization())
+    model.add(MaxPooling2D(pool_size=(2, 2)))
+    model.add(Dropout(0.25))
+
+    # second hidden layer with 64 nodes
+    model.add(Conv2D(64,(3, 3), border_mode='same',activation='relu'))
+    model.add(BatchNormalization())
+
+    # third hidden layer with 64 nodes
+    model.add(Conv2D(64,(3, 3),activation='relu')) 
+    model.add(BatchNormalization())
+    model.add(MaxPooling2D(pool_size=(2, 2)))
+    model.add(Dropout(0.25))
+
+    # Flatten layer, Flatten serves as a connection between the convolution and dense layers
+    # transforms the format of the images from a 2d-array to a 1d-array
+    model.add(Flatten())
+    model.add(BatchNormalization())
+
+    # Dense is the layer to perform classification
+    model.add(Dense(512,activation='relu'))
+    model.add(BatchNormalization())
+    model.add(Dropout(0.5))
+
+    # Final Dense layer to map target class
+    model.add(Dense(nb_classes,activation='softmax'))
+
+    # stpes to compile model, using SGD as learning rate
+    sgd = SGD(lr=0.01, decay=1e-6, momentum=0.9, nesterov=True)
+    model.compile(
+        loss='categorical_crossentropy', 
+        optimizer=sgd,
+        metrics=['accuracy']
+    )
+
+    # model summary
+    model.summary()
+
 <h3></h3>
 <h3></h3>
 <h3></h3>
