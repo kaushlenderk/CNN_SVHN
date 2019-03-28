@@ -191,11 +191,11 @@ Description: Using Keras packages and Sequential interface to train a CNN model 
  
 <h3>Graph: Training and Validation dataset performance</h3>
 
-#### Training and validation dataset accuracy ####
+#### Training and validation datasets accuracy ####
 
 ![](Graph1.png)
 
-#### Training and validation dataset crossentropy loss ####
+#### Training and validation datasets crossentropy loss ####
  
 ![](Graph2.png)
  
