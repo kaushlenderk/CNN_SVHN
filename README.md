@@ -126,12 +126,68 @@ Architecture:
     # create Sequential model object
     model = Sequential()
 
-<h3>Model architecture setting</h3>
- 
+    <h3>Model architecture setting</h3>
+
+    #input layer with 32 nodes
+    model.add(Conv2D(32,(3, 3), border_mode='same',activation='relu',input_shape=(32, 32, 3))) 
+    model.add(BatchNormalization())
+
+    # first hidden layer with 32 nodes
+    model.add(Conv2D(32,(3, 3),activation='relu'))
+    model.add(BatchNormalization())
+    model.add(MaxPooling2D(pool_size=(2, 2)))
+    model.add(Dropout(0.25))
+
+    # second hidden layer with 64 nodes
+    model.add(Conv2D(64,(3, 3), border_mode='same',activation='relu'))
+    model.add(BatchNormalization())
+
+    # third hidden layer with 64 nodes
+    model.add(Conv2D(64,(3, 3),activation='relu')) 
+    model.add(BatchNormalization())
+    model.add(MaxPooling2D(pool_size=(2, 2)))
+    model.add(Dropout(0.25))
+
+    # Flatten layer, Flatten serves as a connection between the convolution and dense layers
+    # transforms the format of the images from a 2d-array to a 1d-array
+    model.add(Flatten())
+    model.add(BatchNormalization())
+
+    # Dense is the layer to perform classification
+    model.add(Dense(512,activation='relu'))
+    model.add(BatchNormalization())
+    model.add(Dropout(0.5))
+
+    # Final Dense layer to map target class
+    model.add(Dense(nb_classes,activation='softmax'))
+
+    # stpes to compile model, using SGD as learning rate
+    sgd = SGD(lr=0.01, decay=1e-6, momentum=0.9, nesterov=True)
+    model.compile(
+        loss='categorical_crossentropy', 
+        optimizer=sgd,
+        metrics=['accuracy']
+    )
+
+    # model summary
+    model.summary()
 
 <h3>Model training </h3>
 
+    # fit model
+    model_history = model.fit(X_extra_train, y_extra_train, batch_size=batch_size, nb_epoch=nb_epoch, verbose=1,
+              shuffle=True,validation_split=0.25,
+              callbacks=[EarlyStopping(monitor='val_loss', patience=5)])
+          
 <h3>Performance matrix on Training and Validation dataset</h3>
+
+    # Performance matrix 
+
+    hist = pd.DataFrame(model_history.history)
+    hist['epoch'] = model_history.epoch
+    hist
+    
+    ![](Architecture.JPG)
 
 <h3>Graph: Training and Validation dataset performance</h3>
 
