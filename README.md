@@ -243,11 +243,11 @@ Architecture:
 
 #### Correctly predicted labels ####
 
-![](Correct_prediction.jpg)
+![](Correct_prediction.JPG)
 
 #### Wrongly predicted labels ####
 
-![](Wrong_prediction.jpg)
+![](Wrong_prediction.JPG)
 
 ### Save entire model to a HDF5 file ###
 
