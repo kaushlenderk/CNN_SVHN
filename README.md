@@ -2,7 +2,7 @@
 
 <h1>Training a Convolutional Neural Network (CNN) on the SVHN Dataset (Format 2) to classify house numbers</h1>
 
-Description: Using Keras Sequential interface, training a CNN on the SVHN Dataset (Format 2) to classify house numbers.
+Description: Using Keras packages and Sequential interface to train a CNN model on the SVHN Dataset (Format 2) to classify house numbers.
 
 Architecture:
 
