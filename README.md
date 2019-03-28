@@ -72,7 +72,7 @@ Description: Using Keras packages and Sequential interface to train a CNN model 
     train_extra_dataset = scipy.io.loadmat('extra_32x32.mat')
     test_dataset = scipy.io.loadmat('test_32x32.mat')
 
-### Preprocess Dataset ###
+### Preprocessing steps ###
 
     # Separate actual image data and label
     X_train = train_dataset['X']
