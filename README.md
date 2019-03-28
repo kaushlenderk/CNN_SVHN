@@ -4,7 +4,7 @@
 
 Description: Using Keras packages and Sequential interface to train a CNN model on the SVHN Dataset (Format 2) to classify house numbers.
 
-Architecture:
+### Architecture: ###
 
     CNN model to classify house numbers consists of following layers:
 
