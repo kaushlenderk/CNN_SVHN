@@ -201,7 +201,17 @@ Architecture:
  
 
 
-<h3>Evaluate model performance on Test dataset</h3>
+### Evaluate model performance on Test dataset ###
+
+    #Evaluate model performance on Test dataset
+    test_loss, test_accuracy= model.evaluate(X_test, y_test)
+    print('Test Loss:', test_loss)
+    print('Test Accuracy:',test_accuracy)
+    
+    *****************************************************
+    Test Dataset Crossentropy Loss: 0.1548489878761162
+    Test Dataset Accuracy: 0.9638137676705593
+    *****************************************************
 
 <h3>Make predictions on Test Dataset</h3>
 
