@@ -259,4 +259,4 @@ http://ufldl.stanford.edu/housenumbers/
 
 
 <h2>Files</h2>
-<li>cnn_svhn.py includes codes to load SVHN dataset, train models, draw accuracy and loss graphs and predict label of test dataset.</li>
+<li>cnn_svhn.ipynb includes codes to load SVHN dataset, train models, draw accuracy and loss graphs and predict label of test dataset.</li>
