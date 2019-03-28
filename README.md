@@ -187,9 +187,18 @@ Architecture:
     hist['epoch'] = model_history.epoch
     hist
     
-    ![](Architecture.JPG)
+![](PerformanceMatrix.JPG)
 
 <h3>Graph: Training and Validation dataset performance</h3>
+
+<h4>Training and validation dataset accuracy</h4>
+![](Graph1.png)
+
+
+<h4>Training and validation dataset crossentropy loss</h4>
+![](Graph2.png)
+ 
+
 
 <h3>Evaluate model performance on Test dataset</h3>
 
