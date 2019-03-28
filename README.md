@@ -241,6 +241,13 @@ Architecture:
     num_cols = 6
     plot_predicted_label(X_test,num_rows, num_cols, y_test,predicted_class,prediction_array);
 
+#### Correctly predicted labels ####
+
+![](Correct_prediction.jpg)
+
+#### Wrongly predicted labels ####
+
+![](Wrong_prediction.jpg)
 
 ### Save entire model to a HDF5 file ###
 
