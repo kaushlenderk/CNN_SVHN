@@ -188,15 +188,15 @@ Architecture:
     hist
     
 ![](PerformanceMatrix.JPG)
-
-![](Graph2.PNG)
-
+ 
 <h3>Graph: Training and Validation dataset performance</h3>
 
-<h4>Training and validation dataset accuracy</h4> 
-![](PerformanceMatrix.JPG)
+#### Training and validation dataset accuracy ####
 
-<h4>Training and validation dataset crossentropy loss</h4>
+![](Graph1.png)
+
+#### Training and validation dataset crossentropy loss ####
+ 
 ![](Graph2.PNG)
  
 
