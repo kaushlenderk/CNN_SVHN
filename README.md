@@ -192,11 +192,10 @@ Architecture:
 <h3>Graph: Training and Validation dataset performance</h3>
 
 <h4>Training and validation dataset accuracy</h4>
-![](Graph1.png)
-
+![](Graph1.PNG) 
 
 <h4>Training and validation dataset crossentropy loss</h4>
-![](Graph2.png)
+![](Graph2.PNG)
  
 
 
