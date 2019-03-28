@@ -258,5 +258,14 @@ Description: Using Keras packages and Sequential interface to train a CNN model 
 http://ufldl.stanford.edu/housenumbers/
 
 
-<h2>Files</h2>
+## Files ##
 <li>cnn_svhn.ipynb includes codes to load SVHN dataset, train models, draw accuracy and loss graphs and predict label of test dataset.</li>
+
+#### References ####
+    https://www.tensorflow.org/tutorials/keras
+    https://github.com/thePetrMarek/SequenceOfDigitsRecognition
+    https://towardsdatascience.com/building-a-convolutional-neural-network-cnn-in-keras-329fbbadc5f5
+    https://ekababisong.org/gcp-ml-seminar/tensorflow/
+    https://github.com/auygur/CNN-SVHN_Keras
+
+
