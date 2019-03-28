@@ -6,7 +6,7 @@ Description: Using Keras packages and Sequential interface to train a CNN model 
 
 Architecture:
 
-![](/Graph1.png)
+![](/Architecture.jpg)
 
 Img
 
