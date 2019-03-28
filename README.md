@@ -197,7 +197,7 @@ Architecture:
 
 #### Training and validation dataset crossentropy loss ####
  
-![](Graph2.PNG)
+![](Graph2.png)
  
 
 
