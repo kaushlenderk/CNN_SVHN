@@ -38,9 +38,9 @@ Architecture:
 
 ![](Architecture.JPG)
 
-<h2>Solution Steps:</h2>
+## Solution Steps: ##
 
-<h3>List of packages</h3>
+### List of packages ###
 
     import os
     import itertools
@@ -65,14 +65,14 @@ Architecture:
     %matplotlib inline
     plt.rcParams['figure.figsize'] = (12.0, 8.0)
 
-<h3>Load Street View House Numbers (SVHN) Dataset (Format 2)</h3>
+### Load Street View House Numbers (SVHN) Dataset (Format 2) ###
 <p><p>Download all three SVHN Dataset (Format 2) files from (http://ufldl.stanford.edu/housenumbers/) source</p></p>
 
     train_dataset = scipy.io.loadmat('train_32x32.mat') 
     train_extra_dataset = scipy.io.loadmat('extra_32x32.mat')
     test_dataset = scipy.io.loadmat('test_32x32.mat')
 
-<h3>Preprocess Dataset</h3>
+### Preprocess Dataset ###
 
     # Separate actual image data and label
     X_train = train_dataset['X']
@@ -115,13 +115,13 @@ Architecture:
     y_extra_train = keras.utils.to_categorical(y_extra_train, 10)
     y_test = keras.utils.to_categorical(y_test, 10)
 
-<h3>Model settings</h3>
+### Model settings ###
 
     batch_size = 128
     nb_classes = 10
     nb_epoch = 20
 
-<h3>Create sequential model object</h3>
+### Create sequential model object ###
     
     # create Sequential model object
     model = Sequential()
@@ -172,14 +172,14 @@ Architecture:
     # model summary
     model.summary()
 
-<h3>Model training </h3>
+### Model training ###
 
     # fit model
     model_history = model.fit(X_extra_train, y_extra_train, batch_size=batch_size, nb_epoch=nb_epoch, verbose=1,
               shuffle=True,validation_split=0.25,
               callbacks=[EarlyStopping(monitor='val_loss', patience=5)])
           
-<h3>Performance matrix on Training and Validation dataset</h3>
+### Performance matrix on Training and Validation dataset ###
 
     # Performance matrix 
 
@@ -220,7 +220,7 @@ Architecture:
     
 ### Graph: Plot the first X test images, their predicted label, and the true label ###
 
-# Plot function 
+    # Plot function 
     def plot_predicted_label(images, nrows, ncols, cls_true, cls_pred,prediction_array):
         fig, axes = plt.subplots(nrows, ncols,figsize=(20, 10))
 
