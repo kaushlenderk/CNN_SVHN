@@ -8,37 +8,35 @@ Architecture:
 
     CNN model to classify house numbers consists of following layers:
 
-    First, convolutional input layer:
+    1. First, convolutional input layer:
     Layer with 32 units, input shape (32, 32, 3) and RELU as an activation function. Batch 
     normalization to normalize first layer output data.
 
-    Second, convolutional hidden layer:
+    2. Second, convolutional hidden layer:
     Layer with 32 units and RELU as an activation function. Applied batch normalization, 2D max 
     polling of (2,2) and dropout of 0.25 as additional layers.
 
-    Third, convolutional hidden layer:
+    3. Third, convolutional hidden layer:
     Layer with 64 units and RELU as an activation function and applied batch normalization.
 
-    Fourth, convolutional hidden layer:
+    4. Fourth, convolutional hidden layer:
     Layer with 64 units and RELU as an activation function. Applied batch normalization, 2D max 
     polling of (2,2) and dropout of 0.25 as additional layers.
 
-    Flatten Layer:
+    5. Flatten Layer:
     Added flatten layer with batch normalization to transform data before feeding to dense layer
 
-    First Dense Layer:
+    6. First Dense Layer:
     Added dense layer with 512 units and RELU as an activation function. Applied batch  
     normalization and dropout of 0.5 as additional layers.
 
-    Second Dense Layer (Output Layer):
+    7. Second Dense Layer (Output Layer):
     Added output layer as a dense layer with 10 units and softmax as an activation function to 
     predict house number.
 
 
 
 ![](Architecture.JPG)
-
-Img
 
 <h2>Solution Steps:</h2>
 
