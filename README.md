@@ -213,13 +213,41 @@ Architecture:
     Test Dataset Accuracy: 0.9638137676705593
     *****************************************************
 
-<h3>Make predictions on Test Dataset</h3>
+### Make predictions on Test Dataset ###
 
-<h3>Graph: Plot the first X test images, their predicted label, and the true label</h3>
+    prediction_array = model.predict(X_test)
+    predicted_class = np.argmax(prediction_array, axis=1)
+    
+### Graph: Plot the first X test images, their predicted label, and the true label ###
 
-<h3>Save entire model to a HDF5 file</h3>
+# Plot function 
+    def plot_predicted_label(images, nrows, ncols, cls_true, cls_pred,prediction_array):
+        fig, axes = plt.subplots(nrows, ncols,figsize=(20, 10))
 
-<h2>Dataset Source</h2>
+        rs = np.random.choice(images.shape[0], nrows*ncols)
+
+        for i, ax in zip(rs, axes.flat):
+            prob = round(prediction_array[i][cls_pred[i]],2)
+            title = 'True: %s, Pred: %s , Prob:%0.2f' % (np.argmax(cls_true[i]),cls_pred[i],prob)
+            ax.imshow(images[i,:,:,0], cmap='binary')
+            ax.set_title(title)
+
+            ax.set_xticks([])
+            ax.set_yticks([])
+
+
+    # ploat image with predicted and actual value
+    num_rows = 3
+    num_cols = 6
+    plot_predicted_label(X_test,num_rows, num_cols, y_test,predicted_class,prediction_array);
+
+
+### Save entire model to a HDF5 file ###
+
+    # Save entire model to a HDF5 file
+    model.save('ML_Assin4_CNN_Model.h5')
+
+## Dataset Source ##
 http://ufldl.stanford.edu/housenumbers/
 
 
