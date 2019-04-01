@@ -161,7 +161,7 @@ Description: Using Keras packages and Sequential interface to train a CNN model 
     # Final Dense layer to map target class
     model.add(Dense(nb_classes,activation='softmax'))
 
-    # stpes to compile model, using SGD as learning rate
+    # steps to compile model, using SGD as learning rate
     sgd = SGD(lr=0.01, decay=1e-6, momentum=0.9, nesterov=True)
     model.compile(
         loss='categorical_crossentropy', 
